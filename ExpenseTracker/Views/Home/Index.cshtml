@@ -1,12 +1,103 @@
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Welcome to My MVC App</h1>
-<p>This is the Index page.</p>
+@*  <h1>Welcome to My MVC App</h1> *@
+@*  <p>This is the Index page.</p> *@
 
-<div class="container mt-5">
-    <h1 class="text-center text-primary">Hello, Bootstrap!</h1>
-    <button class="btn btn-success">Click Me</button>
+@*  <div class="container mt-5"> *@
+@*      <h1 class="text-center text-primary">Hello, Bootstrap!</h1> *@
+@*      <button class="btn btn-success">Click Me</button> *@
+@* </div> *@
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-dark text-white" id="sidebar-wrapper">
+        <div class="sidebar-heading">My Dashboard</div>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Settings</a>
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Logout</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="btn btn-primary" id="menu-toggle">Toggle Sidebar</button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container-fluid mt-4">
+            <h1 class="mb-4">Dashboard Overview</h1>
+
+            <!-- Cards Section -->
+            <div class="row">
+                <!-- Stat Card 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Statistics</h5>
+                            <p class="card-text">Here you can put some quick stats, like the number of users, sales, etc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Activity</h5>
+                            <p class="card-text">Show the recent activities like logs or notifications here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Messages</h5>
+                            <p class="card-text">Display recent messages or communication here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Content Sections (Optional) -->
+            <div class="row mt-4">
+                <!-- Add any other sections here (charts, tables, etc.) -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Reports</h5>
+                            <p class="card-text">Placeholder for reports or any other data visualization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
+
+
+<!-- Optional: Custom JavaScript (for additional interactivity like sidebar toggling) -->
+<script>
+    // Sidebar toggle script
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("wrapper").classList.toggle("toggled");
+    });
+</script>
